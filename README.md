@@ -39,5 +39,5 @@ SIMPLE ::= EXPRESSION > EXPRESSION
 SIMPLE ::= EXPRESSION >= EXPRESSION
 SIMPLE ::= WEXPRESSION =< EXPRESDION
 SIMPLE ::= ( CONDITION )
+<span style="color:blue">some *This is Blue italic.* text</span>
 
-```
