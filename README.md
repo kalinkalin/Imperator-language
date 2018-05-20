@@ -6,7 +6,7 @@ This is my, so far, biggest project in prolog. As introduction i would like to p
 
 ```
 PROGRAMME ::=
-PROGRAMME ::= INSTRUCTION | PROGRAMME
+PROGRAMME ::= INSTRUCTION ; PROGRAMME
 
 INSTRUCTION ::= IDENTIFIER := EXPRESSION
 INSTRUCTION ::= read IDENTIFIER
@@ -40,3 +40,4 @@ SIMPLE ::= WEXPRESSION =< EXPRESDION
 SIMPLE ::= ( CONDITION )
 ```
 
+This is very standard and primary BNF grammar of a simple language. The most important and difficult things in this part are terms
