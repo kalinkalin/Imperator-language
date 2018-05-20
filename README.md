@@ -4,9 +4,8 @@ This is my, so far, biggest project in prolog. As introduction i would like to p
 
 ### BNF GRAMMAR
 
-
-<span style="color:blue">PROGRAMME</span> ::=
-
+```
+PROGRAMME ::=
 PROGRAMME ::= INSTRUCTION | PROGRAMME
 
 INSTRUCTION ::= IDENTIFIER := EXPRESSION
@@ -39,5 +38,5 @@ SIMPLE ::= EXPRESSION > EXPRESSION
 SIMPLE ::= EXPRESSION >= EXPRESSION
 SIMPLE ::= WEXPRESSION =< EXPRESDION
 SIMPLE ::= ( CONDITION )
-<span style="color:blue">some *This is Blue italic.* text</span>
+```
 
