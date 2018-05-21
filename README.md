@@ -33,7 +33,7 @@ CONJUNCTION ::= SIMPLE and CONJUNCTION
 CONJUNCTION ::= SIMPLE
 SIMPLE ::= EXPRESSION = EXPRESSION
 SIMPLE ::= EXPRESSION /= EXPRESSION
-SIMPLE ::= WEXPRESSION < EXPRESSION
+SIMPLE ::= EXPRESSION < EXPRESSION
 SIMPLE ::= EXPRESSION > EXPRESSION
 SIMPLE ::= EXPRESSION >= EXPRESSION
 SIMPLE ::= WEXPRESSION =< EXPRESDION
@@ -43,8 +43,10 @@ SIMPLE ::= ( CONDITION )
 This is very standard and primary BNF grammar of a simple language. The most important and difficult things in this part are symbols defining arithmetic operations and logic conditions. Regarding first one, ```EXPRESSION``` symbol have to preserve operator precedence while parsing arithmetic expressions. It cannot be written just like:
 
 ```
+EXPRESSION --> FACTOR
 EXPRESSION --> FACTOR + EXPRESSION
 EXPRESSION --> FACTOR - EXPRESSION
 EXPRESSION --> FACTOR * EXPRESSION
 ...
 ```
+This parsing from left to right doesn't preserve the precedence, for example ```5 * 4 + 7``` where 4+7 would be done first. My approach was to go through the expression and to break up the whole expression preserving the precedence of operators, so the first terminated sub-expression would be the one with the biggest priority. This approach is very popular and well-known in simple compilers.
