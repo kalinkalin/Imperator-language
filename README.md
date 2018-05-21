@@ -57,7 +57,7 @@ This parsing from left to right doesn't preserve the precedence, for example ```
 
 Programme which goal is to read char stream(programme in our language) and change this data to a tokens list. Tokens are defined smallest elements of language. There are: 
   * key words:  ```read, write, if, then, else, fi, while, do, od, and, or, mod```
-  * separators:  ```’;’, ’+’, ’-’, ’*’, ’/’, ’(’, ’)’, ’<’, ’>’, ’=<’, ’>=’, ’:=’, ’=’, ’/=’```
+  * separators:  ```; , + , - , * , / , ( , ) , < , > , =< , >= , := , = , /= ```
   * identifiers:  ```id's are uppercase letters words.```
   * integers:  ```int's are natural numbers.```
 
