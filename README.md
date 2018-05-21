@@ -89,3 +89,9 @@ Analising above example, simplest while loop, we can see that tokens where split
  That job was done by DCG rule: <br>
  `instruction(while(COND,PROG)) --> [key(while)],condition(COND),[key(do)],program(PROG),[key(od)],[sep(;)]`
  There are non terminal symobols condition(COND),program(PROG), which are responsible for building condition of the loop and sub-programme.
+ 
+ 
+<hr>
+
+
+## INTERPRETER
