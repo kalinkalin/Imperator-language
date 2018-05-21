@@ -74,6 +74,18 @@ The goal of parser is to make whole syntax analysis and check if the given progr
 Translating from tokens to operations is made up by adding parameters do DCG. Tokens are being wrapped into terms expressing operations. For example list of tokens - `[id(SUM),sep(:=),int(0),sep(;)]`  would be translated to a list `[assign(’SUM’, int(0))]`. 
 
 **Another example**: 
-`[key(while),id(N),sep(>),int(0),key(do),key(assign),id(N),sep(:=),id(N),sep(-),int(1),key(od),sep(;)]` 
+
+`[key(while),id(N),sep(>),int(0),key(do),id(N),sep(:=),id(N),sep(-),int(1),sep(;),key(od),sep(;)]` 
 
 to a list -> `[while(id(N)>int(0),[assign(N,id(N)-int(1))]]`.
+
+Analising above example, simplest while loop, we can see that tokens where splitted into given parts:
+ * key word: `key(while)`
+ * condition: `id(N),sep(>),int(0)`
+ * key word: `key(do)`
+ * instruction: `id(N),sep(:=),id(N),sep(-),int(1),sep(;)`
+ * key word and sep: `key(od),sep(;)`
+ 
+ That job was done by DCG rule: <br>
+ `instruction(while(COND,PROG)) --> [key(while)],condition(COND),[key(do)],program(PROG),[key(od)],[sep(;)]`
+ There are non terminal symobols condition(COND),program(PROG), which are responsible for building condition of the loop and sub-programme.
