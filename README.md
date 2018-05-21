@@ -69,4 +69,11 @@ For example scanning - ```read N; SUM := 0;``` would give list ```[key(read),id(
 
 ### PARSER
 
-Tokens of language 
+The goal of parser is to make whole syntax analysis and check if the given programme is well composed programme in the definition of our language. Parser also translates syntax list into list of whole operations in our language, of course if the program is syntatically correct. To achive these purposes i have used prolog utility called [definite clausule grammar(DCG)](http://www.learnprolognow.org/lpnpage.php?pagetype=html&pageid=lpn-htmlse29). 
+
+Translating from tokens to operations is made up by adding parameters do DCG. Tokens are being wrapped into terms expressing operations. For example list of tokens - `[id(SUM),sep(:=),int(0),sep(;)]`  would be translated to a list `[assign(’SUM’, int(0))]`. 
+
+**Another example**: 
+`[key(while),id(N),sep(>),int(0),key(do),key(assign),id(N),sep(:=),id(N),sep(-),int(1),key(od),sep(;)]` 
+
+to a list -> `[while(id(N)>int(0),[assign(N,id(N)-int(1))]]`.
