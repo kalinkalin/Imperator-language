@@ -61,7 +61,7 @@ Programme which goal is to read char stream(programme in our language) and chang
   * identifiers:  ```id's are uppercase letters words.```
   * integers:  ```int's are natural numbers.```
 
-Tokenizer is giving back list of tokens wrapped in terms. So elements of this list are: key(key_word), sep(separator), id(identifier), int(integer).
+Tokenizer is giving back list of tokens wrapped in terms. So elements of this list are: key(*key_word*), sep(*separator*), id(*identifier*), int(*integer*).
 
 For example scanning - ```read N; SUM := 0;``` would give list ```[key(read),id(N),sep(;),id(SUM),sep(:=),int(0),sep(;)]```.
 
