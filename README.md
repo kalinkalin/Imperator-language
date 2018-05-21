@@ -55,7 +55,7 @@ This parsing from left to right doesn't preserve the precedence, for example ```
 
 ### TOKENIZER
 
-Programme which goal is to read char stream and change this data to a tokens list. Tokens are defined smallest elements of language. There are: 
+Programme which goal is to read char stream(programme in our language) and change this data to a tokens list. Tokens are defined smallest elements of language. There are: 
   * key words:  ```read, write, if, then, else, fi, while, do, od, and, or, mod```
   * separators:  ```’;’, ’+’, ’-’, ’*’, ’/’, ’(’, ’)’, ’<’, ’>’, ’=<’, ’>=’, ’:=’, ’=’, ’/=’```
   * identifiers:  ```id's are uppercase letters words.```
@@ -68,3 +68,5 @@ For example scanning - ```read N; SUM := 0;``` would give list ```[key(read),id(
 <hr>
 
 ### PARSER
+
+Tokens of language 
