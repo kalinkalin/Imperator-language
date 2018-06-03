@@ -96,4 +96,4 @@ Analising above example, simplest while loop, we can see that tokens where split
 
 ### INTERPRETER
 
-
+Interpreter is based on assosiaction lists.
